@@ -1,0 +1,99 @@
+$container-width: 1400px;
+$gap: 30px;
+$h-padding: 15px;
+
+$md: 1100px;
+$sm: 800px;
+$xs: 550px;
+
+$columns: 24;
+$hg: calc($gap / 2);
+$cw: calc(100% / $columns);
+
+.container {
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: 0 $h-padding;
+}
+
+.row {
+  display: flex;
+  gap: $gap;
+  flex-wrap: wrap;
+}
+
+.col-5 {
+  flex-basis: calc($cw * 5 - $hg);
+}
+
+.col-6 {
+  flex-basis: calc(25% - $hg);
+}
+
+.col-16 {
+  flex-basis: calc($cw * 16 - $hg);
+}
+
+.col-center {
+  &.col-13 {
+    flex-basis: calc($cw * 13 - $gap);
+  }
+}
+
+.col-13 {
+  flex-basis: calc($cw * 13 - $hg);
+}
+
+.col-12 {
+  flex-basis: calc(50% - $hg);
+}
+
+@media screen and (max-width: $md) {
+  .visible-md {
+    display: block !important;
+  }
+
+  .hidden-md {
+    display: none !important;
+  }
+
+  .col-md-16 {
+    flex-basis: calc($cw * 16 - $hg) !important;
+  }
+
+  .col-md-8 {
+    flex-basis: calc((100% / 3) - $hg) !important;
+  }
+
+  .col-md-6 {
+    flex-basis: calc((100% / 4) - $hg) !important;
+  }
+}
+
+@media screen and (max-width: $sm) {
+  .visible-sm {
+    display: block !important;
+  }
+
+  .hidden-sm {
+    display: none !important;
+  }
+
+  .order-sm-3 {
+    order: 3 !important;
+  }
+
+  .col-sm-12 {
+    flex-basis: calc(50% - $hg) !important;
+  }
+
+  .col-sm-24 {
+    flex-basis: 100% !important;
+  }
+}
+
+@media screen and (max-width: $xs) {
+  .col-xs-24 {
+    flex-basis: 100% !important;
+  }
+}
